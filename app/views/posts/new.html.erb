@@ -1,0 +1,28 @@
+<%= form_for @post, :html => {:class => "form center"} do |f| %>
+  <div class="form-group">
+    <%= f.label :title, "Title:", class: "col-md-4 control-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <%= f.label :category, "Category:", class: " col-md-4 control-label" %>
+        <%= f.select(:category, post_categories, {}, { class: 'form-control' }) %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <%= f.label :image, "Image:", class: "col-md-4 control-label" %>
+        <%= f.file_field :image, class: 'form-control-file' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description, class: "col-md-4 control-label" %>
+    <%= f.rich_text_area :description %>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
+<% end %>
