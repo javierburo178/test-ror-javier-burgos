@@ -1,24 +1,18 @@
-# README
+# Test RoR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The steps to start the application.
 
-Things you may want to cover:
+* `bundle install`
+install gems
 
-* Ruby version
+* `rails db:create`
+Create DB.
 
-* System dependencies
+* `rails db:migrate`
+Run migrations.
 
-* Configuration
+* `rails s`
+Start server (localhost:3000).
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* `rails test`
+Start test.
