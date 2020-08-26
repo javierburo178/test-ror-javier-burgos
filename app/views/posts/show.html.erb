@@ -1,0 +1,27 @@
+<h2><%= @post.title %></h2>
+<p>
+  <%= link_to "Destroy", @post, method: :delete, confirm: "Are you sure?" %> |
+  <%= link_to "View All", posts_path %>
+</p>
+
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">Variant</th>
+    <th scope="col">Size</th>
+    <th scope="col">Image</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">Thumbnail</th>
+    <td><%= @post.thumbnail.variation.transformations[:resize]%></td>
+    <td><%= image_tag @post.thumbnail if @post.image.attached? %></td>
+  </tr>
+
+    <th scope="row">Original</th>
+    <td><%= @post.image.metadata['width']%> x <%= @post.image.metadata['height']%></td>
+    <td><%= image_tag @post.image if @post.image.attached? %></td>
+  </tr>
+  </tbody>
+</table>
